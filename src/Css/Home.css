@@ -1,0 +1,45 @@
+.homeContainer {
+    position: relative;
+    width: 100%; /* Adjust the width as needed */
+    height: 75vh; /* Adjust the height as needed */
+    overflow: hidden;
+    display: inline-block;
+    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+}
+
+.image {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    z-index: 1;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
+    display: none; /* Initially hidden */
+  }
+  
+  .image-container:hover .overlay {
+    display: block; /* Show the overlay on hover */
+  }
+  
+  /* You can adjust the background color and opacity as needed */
+  
+
+
+
+
+@media screen and (max-width:844px) {
+
+    .homeContainer{
+        height: 24vh;
+    }
+    
+}
+
+

@@ -1,3 +1,14 @@
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+*{
+    font-family: Tajawal,sans-serif
+}
+
+body{
+    background-color: #5f84a2;
+    overflow-x: hidden;
+}
+
