@@ -1,5 +1,5 @@
 import React from "react";
-import ContactHeader from "../Img/ContactHeader.jpg"
+import ContactHeader from "../Img/velez_beach.jpg"
 
 
 
@@ -11,8 +11,8 @@ export default function Contact() {
 
     return(
         <>
-        <div className="w-full">
-            <img className="w-full" src={ContactHeader} alt="Couple standing in a field at sunset" />
+        <div className="insuranceContainer">
+            <img className="contactScale w-full" src={ContactHeader} alt="Beach with sunset and waves" />
         </div>
         
             <div className="text-white">

@@ -1,17 +1,20 @@
 .homeContainer {
     position: relative;
     width: 100%; /* Adjust the width as needed */
-    height: 75vh; /* Adjust the height as needed */
+    height: 70vh; /* Adjust the height as needed */
     overflow: hidden;
-    display: inline-block;
-    clip-path: polygon(0% 0%, 100% 0%, 100% 90%, 50% 100%, 0% 90%);
+    display: block;
+    
+}
+.bg-button-blue{
+  background-color: #5f84a2;
 }
 
 .image {
     width: 100%;
-    height: auto;
     position: absolute;
     z-index: 1;
+    
 }
 
 .overlay {
@@ -20,7 +23,6 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 255, 255, 0.7); /* White with 70% opacity */
     display: none; /* Initially hidden */
   }
   
@@ -29,7 +31,125 @@
   }
   
   /* You can adjust the background color and opacity as needed */
+  p.roboto{
+    font-family: Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  .diagonal {
+    position: relative;
+    line-height: 50px;
+    background: #67809F;
+    color: black;
+    border: none;
+    font-weight: bold;
+    font-family: 'Open Sans', sans-serif;
+    overflow: hidden;
+    z-index: 1;
+    padding: 0px;
+  }
+  .diagonal:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500%;
+    height: 1000%;
+    background: #34495E;
+    z-index: -1;
+    transform-origin: 0% 0%;
+    transform: translateX(calc(20% - 25px)) translateY(10%) rotate(-45deg);
+    /* transform: translateY(10%) translateX(16%) rotate(-45deg); */
+    transition: transform .6s;
+  }
+  .diagonal:hover::after {
+    transform: translateY(10%) translateX(-8%) rotate(-45deg);
+  }
+  .headerUnderline {
+    position: relative;
+    display: inline-block;
+    
+   
+  }
+  .headerUnderline::after {
+    content: "";
+    position: absolute;
+    left: 43%;
+    bottom: -10px;
+    width: 40px; /* Adjust the width to control the length of the underline */
+    border-bottom: 2px solid #000; /* Adjust the thickness and color */
+    
+    
   
+  }
+  .headerUnderline:hover {
+  color: #fff; /* Change text color to white on hover */
+}
+
+ 
+  
+  
+  .logoScale{
+    scale: 200%;
+  }
+  
+
+
+  .bubbleContainer {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+  }
+  
+  .bubble {
+    position: absolute;
+    display: flex;
+  }
+  
+  .bubbleContainer:hover .bubble span {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background: #4fc3dc;
+    margin: 0 4px;
+    border-radius: 50%;
+    opacity: .3;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+      0 0 50px #4fc3dc,
+      0 0 100px #4fc3dc;
+    animation: animate 8s linear infinite;
+    animation-duration: calc(200s / var(--i));
+  }
+  
+  .bubbleContainer:hover .bubble span:nth-child(even) {
+    background: #67809F;
+    box-shadow: 0 0 0 10px #afb080, 0 0 50px yellow, 0 0 100px;
+    animation-duration: calc(70s/ var(--i));
+    opacity: 0.5;
+    
+    
+  }
+
+  .diagonal:hover div .headerUnderline{
+    color: white;
+  }
+
+
+    
+  
+  
+  @keyframes animate {
+    0% {
+      transform: translateY(1300%) scale(.4);
+    }
+    100% {
+      transform: translateY(-600%) scale(0.7);
+    }
+  }
+
+
+  
+
 
 
 
@@ -37,8 +157,28 @@
 @media screen and (max-width:844px) {
 
     .homeContainer{
-        height: 24vh;
+        height: 50vh;
+        width: 100%;
     }
+    .image{
+      width: 100%;
+      scale: 350%;
+      overflow: hidden;
+      
+    }
+    .serviceContainer{
+      height: 30vh;
+      overflow: hidden;
+    }
+  .serviceScale{
+    scale: 400%;
+    
+    
+  }
+  .diagonal:hover::after {
+    transform: translateY(10%) translateX(-20%) rotate(-45deg);
+  }
+    
     
 }
 

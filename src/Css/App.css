@@ -1,3 +1,7 @@
+html{
+  scroll-behavior: smooth;
+}
+
 .center{
     justify-content: center;
     align-items: center;
@@ -26,12 +30,10 @@ h1:after {
 }
 .text-overlay {
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-    color: #fff;
-    background-color: rgba(255, 255, 255, 0.5);
+    top: 12%;
+    left: 5%;
+    width: 75%;
+    
     padding: 1%;
 }
 
@@ -94,15 +96,148 @@ h1:after {
     width: auto;
     height: auto;
     z-index: 0;
-    padding-top: 25px;
+    
     transform: translateX(35%);
-}
-.assistanceContainer{
-    background-color: #fefcf6;
 }
 .helpContainer{
     background-color: #dfd3c3;
 }
+
+
+
+.switch {
+    --secondary-container: #3a4b39;
+    --primary: #84da89;
+    font-size: 17px;
+    position: relative;
+    display: inline-block;
+    width: 3.7em;
+    height: 1.8em;
+   }
+   
+   .switch input {
+    display: none;
+    opacity: 0;
+    width: 0;
+    height: 0;
+   }
+   
+   .slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #313033;
+    transition: .2s;
+    border-radius: 30px;
+   }
+   
+   .slider:before {
+    position: absolute;
+    content: "";
+    height: 1.4em;
+    width: 1.4em;
+    border-radius: 20px;
+    left: 0.2em;
+    bottom: 0.2em;
+    background-color: #aeaaae;
+    transition: .4s;
+   }
+   
+   input:checked + .slider::before {
+    background-color: var(--primary);
+   }
+   
+   input:checked + .slider {
+    background-color: var(--secondary-container);
+   }
+   
+   input:focus + .slider {
+    box-shadow: 0 0 1px var(--secondary-container);
+   }
+   
+   input:checked + .slider:before {
+    transform: translateX(1.9em);
+   }
+
+   .form__group {
+    position: relative;
+    padding: 20px 0 0;
+    width: 100%;
+    max-width: 250px;
+  }
+  
+  .form__field {
+    font-family: inherit;
+    width: 100%;
+    border: none;
+    border-bottom: 2px solid black;
+    outline: 0;
+    font-size: 17px;
+    color: black;
+    padding: 7px 0;
+    background: transparent;
+    transition: border-color 0.2s;
+  }
+  
+  .form__field::placeholder {
+    color: transparent;
+  }
+  
+  .form__field:placeholder-shown ~ .form__label {
+    font-size: 17px;
+    cursor: text;
+    top: 20px;
+  }
+  
+  .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: black;
+    pointer-events: none;
+  }
+  
+  .form__field:focus {
+    padding-bottom: 6px;
+    font-weight: 700;
+    border-width: 3px;
+    border-image: linear-gradient(to right, #116399, #38caef);
+    border-image-slice: 1;
+  }
+  
+  .form__field:focus ~ .form__label {
+    position: absolute;
+    top: 0;
+    display: block;
+    transition: 0.2s;
+    font-size: 17px;
+    color: #38caef;
+    font-weight: 700;
+  }
+  
+  /* reset input */
+  .form__field:required, .form__field:invalid {
+    box-shadow: none;
+  }
+
+  .insuranceContainer{
+    width: 100%;
+    height: 40vh;
+    overflow: hidden;
+  }
+  .insuranceScale{
+    transform: translateY(-45%);
+  }
+
+  .contactScale{
+    transform: translateY(-50%);
+  }
+  
 @media screen and (max-width:844px) {
 
     .betterHelp{
@@ -110,6 +245,13 @@ h1:after {
         width: 35%;
         height: 160px;
         
+    }
+    .insuranceContainer{
+        height: 25vh;
+    }
+    .insuranceScale{
+        scale: 200%;
+        transform: translateY(-15%);
     }
     .p{
         width: 70%;
@@ -119,5 +261,21 @@ h1:after {
         display: center;
         margin-top: 0px;
     }
+    .text-overlay{
+    
+    
+        width: 100%;
+
+        
+        
+    }
     
 }
+/* @media screen and (min-width:1400px) {
+
+    .betterHelp{
+
+        height: 575px;
+    }
+    
+} */

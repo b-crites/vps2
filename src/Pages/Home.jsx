@@ -1,107 +1,146 @@
-import React from "react";
+import React, {useRef} from "react";
 import { Link } from "react-router-dom";
 import "../Css/Home.css";
-import HomeImg from "../Img/HomeDiv.jpg";
-import BetterHelp from "../Img/BetterHelp.jpg";
+import HomeImg from "../Img/VelezHomeDiv.jpg";
 import About from "../Components/About";
-import Rocks from "../Img/Rock-services.jpg";
-import PatientModalBtn from "../Components/PatientModalBtn";
+import { useLanguage } from "../Components/LanguageProvider";
+import {RiMedicineBottleLine} from 'react-icons/ri'
+import {BiBrain} from 'react-icons/bi'
+import PatientForm from "../Components/PatientForm";
+import ReferralForm from "../Components/ReferralForm";
 
 function Home() {
+  const translations = {
+    en: {
+      
+      needAssistanceTitle: `Need Assistance?`,
+      needAssistanceMessage: `
+      Everybody's needs are different and so let us help assist you in the right direction with a consultation appointment. Fill out our New Patient Request form to get started on to better wellness.`,
+      homeNewPatient: 'New Patient Request',
+      helpTitle1: 'What We He',
+      helpTitle2: 'lp With:',
+      helpMessage: `Our psychiatry practice is dedicated to providing a wide range of services tailored to meet the unique needs of each individual. We offer compassionate and evidence-based care for a variety of mental health concerns. Our team of experienced psychiatrists are committed to creating a safe and inclusive environment where all people, regardless of their background, gender, or identity, are warmly welcomed and accepted. We believe in the power of diversity and respect, and we are here to support you on your journey towards improved mental health and well-being. `,
+      anxiety: 'Anxiety',
+      depression: 'Depression',
+      addiction: 'Addiction',
+      trauma: 'Trauma',
+      manyMore: 'And many more',
+      servicesBtn: 'Go to Services Page'
+      
+
+
+    },
+    es: {
+      needAssistanceTitle: '¿Necesita Ayuda?',
+      needAssistanceMessage:
+        "Las necesidades de cada persona son diferentes, por eso permítanos ayudarlo en la dirección correcta con una cita de consulta. Complete nuestro formulario de Solicitud de paciente nuevo para comenzar a lograr un mejor bienestar.",
+      homeNewPatient: 'Solicitud de Nuevo Paciente',
+      helpTitle1: 'En qué Ayu',
+      helpTitle2: 'damos:',
+      helpMessage: 'Nuestra práctica de psiquiatría se dedica a brindar una amplia gama de servicios diseñados para satisfacer las necesidades únicas de cada individuo. Ofrecemos atención compasiva y basada en evidencia para una variedad de problemas de salud mental. Nuestro equipo de psiquiatras experimentados está comprometido a crear un entorno seguro e inclusivo donde todas las personas, independientemente de su origen, género o identidad, sean bienvenidas y aceptadas calurosamente. Creemos en el poder de la diversidad y el respeto, y estamos aquí para apoyarlo en su viaje hacia una mejor salud mental y bienestar.',
+      anxiety: 'Ansiedad',
+      depression: 'Depresión',
+      addiction: 'Adiccion',
+      trauma: 'Trauma',
+      manyMore: 'Y muchos mas',
+      servicesBtn: 'Ir a la página de servicios'
+    },
+  };
+
+  const { language, changeLanguage } = useLanguage();
+
+
+  const bubbleTimeValues = [
+    17, 25, 19, 12, 28, 15, 21, 14, 23, 11, 30, 20, 26, 13, 24, 18, 27, 22, 16, 29,38,10,41,5,55,69
+    ];
+
+
+    
+
+  const targetDiv = useRef(null);
+
+
+  const scrollToDiv = () => {
+    targetDiv.current.scrollIntoView({ behavior: 'smooth' });
+  };
+
+    
   return (
     <>
-      <div className="homeContainer mb-14">
+      <div className="homeContainer">
+        <div className="image-container">
+
         <img
           src={HomeImg}
           decoding="async"
           loading="lazy"
-          alt="Home Butterfly"
-          className="image "
+          alt="Mountains"
+          className="image lg:scale-100 lg:-translate-y-52 -translate-y-0  "
         />
+        </div>
 
-        <div className="text-overlay z-50 rounded-md text-black py-5 px-6">
-          <h2 className="titleHeader xl:text-5xl sm:text-4xl md:text-4xl ">
-            Velez Psychiatric Services
+        <div className="text-overlay z-10 rounded-md text-black px-6">
+          
+          
+          <h2 className="titleHeader xl:text-5xl font-semibold text-3xl ">
+            Eugene's Medication Management and Ketamine Assisted Psychotherapy
           </h2>
-          <div>
-            <p className="titleHeader xl:text-2xl  md:text-xl">
-              Medication Management and Ketamine Assisted Psychotherapy
-            </p>
+        
+          <div className="relative float-left lg:w-1/2 lg:pt-S pt-8">
+            <h2 className=" font-semibold lg:text-2xl text-xl  titleHeader roboto">At Velez Psychiatric Services, we believe in giving you the help you desire.</h2>
+            <button onClick={scrollToDiv} className="block py-2.5 px-4 rounded transition duration-200 bg-teal text-white hover:bg-red-300 mt-10 active:scale-95">Book a Consultation</button>
           </div>
+         
         </div>
       </div>
+      
+      <div className="w-full  grid grid-cols-1 lg:grid-cols-2 text-center ">
+        <Link to="services">
+        <div className="diagonal bg-white hover:text-white py-10">
+        <div className="logoScale center pb-5">
+        <RiMedicineBottleLine />
+        </div>
+        <div className="text-2xl ">
+          <h2 className="headerUnderline">Medication Management</h2>
+        </div>
+        <div className="w-1/2 font-semibold text-xl mx-auto pt-10">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel dapibus metus. Curabitur efficitur semper purus, sit amet tincidunt lectus laoreet non.</p>
+        </div>
+        </div>
+        </Link>
+        
+        <Link to="services">
+        <div className="transition bg-red-300 hover:bg-blue-950 duration-300 bubbleContainer hover:text-white py-10">
+          <div className="bubble">
+            {bubbleTimeValues.map((value, index) => (
 
-      <div className="assistanceContainer w-full xl:py-10 grid grid-cols-1 md:grid-cols-2">
-        <div className="titleHeader pt-5 text-xl xl:text-4xl mb-5 md:m-0 ">
-          <strong className="z-10 ms-20 xl:ms-44 xl:mt-10 xl:pb-40 col-span-7">
-            Need Assistance?
-          </strong>
-          <div className="better-Container">
-            <img
-              className=" shadow-2xl z-10 xl:w-6/12 h-auto ms-10  xl:mt-10 w-4/12 "
-              src={BetterHelp}
-              alt="Feather calmly falling into hand"
-            />
-            <div className="betterHelp shadow-3xl"></div>
+          <span key={index} style={{'--i': value}}></span>
+            ))}
+          
           </div>
-        </div>
-        <div className="p mx-auto">
-          <p>
-            Everybody's needs are different and so let us help assist you in the
-            right direction with a consultation appointment. Fill out our
-            <strong> New Patient Request </strong> form to get started on to
-            better wellness.
-          </p>
-          <button className=" py-2 px-3 relative top-0 left-0 text-lg  bg-teal hover:bg-red-300 text-white transition duration-200 rounded">
-            New Patient Request
-          </button>
-        </div>
-      </div>
 
-      <div className="helpContainer mb-16 grid pb-10 grid-cols-1 md:grid-cols-2 w-full">
-        <div className=" text-xl text-black">
-          <div className="text-3xl titleHeader-dark">
-            <h2 className="relative font-semibold ms-10 mt-10 mb-2">
-              <span className=" border-b-4 border-solid border-black -bottom-5">
-                What We He
-              </span>
-              lp With:
-            </h2>
-            <div className="flex flex-col items-center text-xl">
-              <ul className=" mt-8 -2 list-disc text-xl">
-                <li>Anxiety</li>
-                <li>Depression</li>
-                <li>Addiction</li>
-                <li>Trauma</li>
-                <li>and many more..</li>
-              </ul>
-            </div>
+        <div className="logoScale center pb-5">
+          <BiBrain />
           </div>
-          <div className="center text-lg my-10">
-            <p className="w-3/4">
-              Our psychiatry practice is dedicated to providing a wide range of
-              services tailored to meet the unique needs of each individual. We
-              offer compassionate and evidence-based care for a variety of
-              mental health concerns. Our team of experienced psychiatrists are committed to creating a safe and inclusive
-              environment where all people, regardless of their background,
-              gender, or identity, are warmly welcomed and accepted. We believe
-              in the power of diversity and respect, and we are here to support
-              you on your journey towards improved mental health and well-being.
-            </p>
-          </div>
-          <Link to='services'><button className="float-right py-2 px-3 relative top-0 right-1/4 text-lg  bg-white hover:bg-red-300 text-black hover:text-white transition duration-200 rounded">
-            Go to Services Page
-          </button>
-          </Link>
+        <div className="text-2xl ">
+          <h2 className="headerUnderline font-semibold">Ketamine Assisted Psychotherapy</h2>
+        </div> 
+         <div className="w-1/2 mx-auto font-semibold text-xl pt-10">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed vel dapibus metus. Curabitur efficitur semper purus, sit amet tincidunt lectus laoreet non.</p>
         </div>
-        <div>
-          <div className=" w-1/2 ms-36 mt-28  h-auto">
-            <img className=" shadow-2xl" src={Rocks} alt="Rocks" />
-          </div>
         </div>
+        </Link>
+        
       </div>
+      
+
+   
       <div>
         <About />
+      </div>
+      <div ref={targetDiv}>
+        <PatientForm fullWidth={false}  />
+        
       </div>
     </>
   );
