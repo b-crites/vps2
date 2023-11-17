@@ -28,14 +28,14 @@ export default function PatientForm(props) {
     setFormData({ ...formData, [name]: value });
   };
 
-
+  const formHeightClass = props.fullWidth ? "gap-1": "gap-6"
   const formWidthClass = props.fullWidth ? "w-full rounded-b-xl  " : "lg:w-1/3 mb-16";
   
   return (
     
     <form
       onSubmit={handleSubmit}
-      className={`${formWidthClass} bg-white mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 p-5`}
+      className={`${formWidthClass} bg-white mx-auto grid grid-cols-1 lg:grid-cols-2 ${formHeightClass} p-5`}
     >
       <div className="font-semibold col-span-1 lg:col-span-2 mx-auto text-3xl">
         Request a Consult

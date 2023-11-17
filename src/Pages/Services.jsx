@@ -1,7 +1,7 @@
 import React from "react";
 import ServicesHeader from "../Img/ServicesHeader.jpg";
 import { useLanguage } from "../Components/LanguageProvider";
-import "../Css/Header.css"
+import "../Css/Header.css";
 import PatientForm from "../Components/PatientForm";
 
 export default function Services() {
@@ -42,43 +42,40 @@ export default function Services() {
         <div className="w-full xl:flex  ">
           <div className=" lg:w-2/3 w-4/5 mx-auto  p-4 text-xl font-normal">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada viverra iaculis. Nulla bibendum ex sem, ut
-              vehicula felis dictum a. Nam dapibus tortor a elit pretium porta.
-              Nullam non ligula ut felis porttitor imperdiet. Nulla maximus
-              metus nibh, ac dapibus sem interdum eu. Maecenas ut nibh mollis
-              justo rhoncus sagittis eget at nulla. Donec non sodales nulla. Sed
-              sagittis nulla eu lectus elementum, vitae elementum quam lacinia.
-              Proin ultrices vehicula neque, a porttitor orci. Curabitur
-              scelerisque eget nisi nec elementum. Pellentesque tincidunt vitae
-              urna ac cursus. Proin neque arcu, suscipit vel sollicitudin sit
-              amet, ultricies dignissim nulla. Nullam cursus, eros nec blandit
-              tempor, tellus leo porttitor velit, id convallis nunc lorem id
-              ipsum.
+              We will engage in a process of reviewing your psychiatric,
+              medical, and social history. As you see fit, we will also review
+              past records of mental health treatment. Together, we will decide
+              upon what problems we need to treat and how those might fit into
+              mental health diagnoses. However, treatment will be individualized
+              to you as a person, not to your diagnoses. We will explore the
+              many avenues and options that you have on your road to wellness.
             </p>
           </div>
         </div>
       </div>
       <div className=" my-6  h-auto font-semibold text-4xl bg-white">
         <div className="lg:pe-10 ps-10 lg:float-right">
-          <h2 className="italic py-6 titleHeader">Ketamine Assisted Psychotherapy</h2>
+          <h2 className="italic py-6 titleHeader">
+            Ketamine Assisted Psychotherapy
+          </h2>
         </div>
         <div className="w-full xl:flex  ">
           <div className=" lg:w-2/3 mx-auto  p-4 text-xl font-normal">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-              Suspendisse malesuada viverra iaculis. Nulla bibendum ex sem, ut
-              vehicula felis dictum a. Nam dapibus tortor a elit pretium porta.
-              Nullam non ligula ut felis porttitor imperdiet. Nulla maximus
-              metus nibh, ac dapibus sem interdum eu. Maecenas ut nibh mollis
-              justo rhoncus sagittis eget at nulla. Donec non sodales nulla. Sed
-              sagittis nulla eu lectus elementum, vitae elementum quam lacinia.
-              Proin ultrices vehicula neque, a porttitor orci. Curabitur
-              scelerisque eget nisi nec elementum. Pellentesque tincidunt vitae
-              urna ac cursus. Proin neque arcu, suscipit vel sollicitudin sit
-              amet, ultricies dignissim nulla. Nullam cursus, eros nec blandit
-              tempor, tellus leo porttitor velit, id convallis nunc lorem id
-              ipsum.
+              You will engage in a psychiatric evaluation to determine your
+              appropriateness for therapy. You must be engaged with a
+              psychotherapist prior to beginning therapy, and be medically
+              appropriate for therapy (relative contraindications include, but
+              are not limited to, uncontrolled hypertension and primary
+              psychotic disorders such as schizophrenia and Bipolar I disorder).
+              You will then have three preparatory sessions followed by a
+              medicine session and then an integration session. You may then
+              have additional medicine and integration sessions (an average for
+              treatment resistant depression is 4-6 sessions). You will have the
+              opportunity at each step to decide if you want to go forward with
+              treatment, as you will only be charged for services as you receive
+              them. Ketamine Assisted Psychotherapy is not covered by insurance,
+              and rates will be discussed prior to engagement in services.
             </p>
           </div>
         </div>

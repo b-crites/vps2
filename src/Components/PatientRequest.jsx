@@ -9,7 +9,7 @@ const PatientModal = (props) => {
       props.isOpen ? "visible" : "hidden"
     }`}
   >
-    <div className="bg-teal pt-5 rounded-xl">
+    <div className="bg-teal pt-5  rounded-xl">
       <button className="float-right scale-150 top-0 pb-2 pe-2 text-white" onClick={props.onClose}>
         <IoIosCloseCircleOutline />
       </button>

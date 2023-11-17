@@ -176,7 +176,7 @@
     
   }
   .diagonal:hover::after {
-    transform: translateY(10%) translateX(-20%) rotate(-45deg);
+    transform: translateY(10%) translateX(-30%) rotate(-45deg);
   }
     
     

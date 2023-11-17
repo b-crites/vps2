@@ -39,7 +39,7 @@ export default function ReferralForm(props){
 
 
         <form onSubmit={handleSubmit}
-        className="bg-white mx-auto grid grid-cols-1 lg:grid-cols-2 gap-6 p-5 rounded-b-xl">
+        className="bg-white mx-auto grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-6 p-5 rounded-b-xl">
             <div className="font-semibold col-span-1 lg:col-span-2 mx-auto text-3xl">
                 60 Second Referral
             </div>
