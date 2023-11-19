@@ -28,7 +28,7 @@ export default function PatientForm(props) {
     setFormData({ ...formData, [name]: value });
   };
 
-  const formHeightClass = props.fullWidth ? "gap-1": "gap-6"
+  const formHeightClass = props.fullWidth ? "lg:gap-6 gap-1": "gap-6"
   const formWidthClass = props.fullWidth ? "w-full rounded-b-xl  " : "lg:w-1/3 mb-16";
   
   return (
