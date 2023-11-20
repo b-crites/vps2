@@ -2,7 +2,7 @@
   "name": "vps2",
   "private": true,
   "version": "0.0.0",
-  "homepage": "https://b-crites/vps2",
+  "homepage": "https://b-crites/",
   "type": "module",
   "scripts": {
     "predeploy": "npm run build",
