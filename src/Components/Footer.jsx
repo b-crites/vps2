@@ -38,8 +38,7 @@ function Footer() {
           <div>
             <h2 className="text-xl font-bold mb-2">{translations[language].companyInfo}</h2>
             <Link
-            to="
-            2services"
+            to="services"
             
             >{translations[language].services}
             </Link>
@@ -49,16 +48,16 @@ function Footer() {
           </div>
           <div>
             <h2 className="text-xl font-bold mb-2">{translations[language].resources}</h2>
-            <p><a href='#'>Resource 1</a></p>
-            <p><a href='#'>Resource 2</a></p>
-            <p><a href='#'>Resource 3</a></p>
+            <p><a href='https://www.psychologytoday.com/us/blog/new-beginning/202208/introduction-ketamine-assisted-psychotherapy'>Psychology Today</a></p>
+            <p><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9207256/'>NCBI</a></p>
+            <p><a href='https://www.tandfonline.com/doi/full/10.1080/02791072.2019.1587556'>Ketamine for Depression and Anxiety</a></p>
           </div>
-          <div>
+          {/* <div>
             <h2 className="text-xl font-bold mb-2">Patient Portal</h2>
             <p>Facebook</p>
             <p>Twitter</p>
             <p>Instagram</p>
-          </div>
+          </div> */}
         </div>
         <div className="mt-8 text-center">
           &copy;  {translations[language].copyright}

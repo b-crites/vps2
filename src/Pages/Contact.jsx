@@ -26,10 +26,10 @@ export default function Contact() {
                 <div className="center mb-10">
                     <p><strong>Additional resources:</strong>
                     <ul className=" space-y-10">
-                        <li>Lane Behavioral Health</li>
-                        <li>Resource</li>
-                        <li>Resource</li>
-                        <li>Resource</li>
+                        <li><a href="https://www.lanecounty.org/government/county_departments/health_and_human_services/behavioral_health">Lane Behavioral Health</a></li>
+                        <li><a href='https://www.psychologytoday.com/us/blog/new-beginning/202208/introduction-ketamine-assisted-psychotherapy'>Psychology Today</a></li>
+            <li><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9207256/'>NCBI</a></li>
+            <li><a href='https://www.tandfonline.com/doi/full/10.1080/02791072.2019.1587556'>Ketamine for Depression and Anxiety</a></li>
                     </ul>
                     </p>
                     </div>
