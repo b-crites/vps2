@@ -25,6 +25,21 @@ function Home() {
       trauma: "Trauma",
       manyMore: "And many more",
       servicesBtn: "Go to Services Page",
+      homeTitle:`Eugene's Medication Management and Ketamine Assisted Psychotherapy`,
+      homeDescription:'At Velez Psychiatric Services, we believe in giving you the help you desire.',
+      consultBtn:'Book a Consultation',
+      medManage:'Medication Management',
+      ketDiv:'Ketamine Assisted Psychotherapy',
+      medInfo:`Experience the precision of personalized mental health care
+      through detailed interview with a review of your history and
+      past treatment. Find peace of mind in a treatment plan crafted
+      specifically for you that takes into account all aspects of your
+      persona.`,
+      ketInfo:`Explore the possibilities for healing and growth with Ketamine
+      Assisted psychotherapy, and emerging field in mental health.
+      Embrace transformative healing in a safe, supportive space,
+      tailored to your particular needs.`
+
     },
     es: {
       needAssistanceTitle: "¿Necesita Ayuda?",
@@ -41,6 +56,14 @@ function Home() {
       trauma: "Trauma",
       manyMore: "Y muchos mas",
       servicesBtn: "Ir a la página de servicios",
+      homeTitle: 'Gestión de Medicamentos de Eugene y Psicoterapia Asistida con Ketamina',
+      homeDescription:`En Velez Psychiatric Services, creemos en brindarte la ayuda que deseas.`,
+      consultBtn:'Agenda una Consulta',
+      medManage:`Gestión de Medicamentos`,
+      ketDiv:`Psicoterapia Asistida con Ketamina`,
+      medInfo:`Experimenta la precisión de la atención personalizada en salud mental a través de una entrevista detallada con una revisión de tu historial y tratamientos previos. Encuentra tranquilidad en un plan de tratamiento diseñado específicamente para ti, que tiene en cuenta todos los aspectos de tu persona.`,
+      ketInfo:`Explora las posibilidades de curación y crecimiento con la psicoterapia asistida con ketamina, un campo emergente en la salud mental. Acepta una curación transformadora en un espacio seguro y de apoyo, adaptado a tus necesidades particulares.`,
+
     },
   };
 
@@ -70,19 +93,18 @@ function Home() {
 
         <div className="text-overlay z-10 rounded-md text-black px-6">
           <h2 className="titleHeader xl:text-5xl font-semibold text-3xl ">
-            Eugene's Medication Management and Ketamine Assisted Psychotherapy
+          {translations[language].homeTitle}
           </h2>
 
           <div className="relative float-left lg:w-1/2 lg:pt-S pt-8">
             <h2 className=" font-semibold lg:text-2xl text-xl  titleHeader roboto">
-              At Velez Psychiatric Services, we believe in giving you the help
-              you desire.
+            {translations[language].homeDescription}
             </h2>
             <button
               onClick={scrollToDiv}
               className="block py-2.5 px-4 rounded transition duration-200 bg-teal text-white hover:bg-red-300 mt-10 active:scale-95"
             >
-              Book a Consultation
+              {translations[language].consultBtn}
             </button>
           </div>
         </div>
@@ -95,15 +117,11 @@ function Home() {
               <RiMedicineBottleLine />
             </div>
             <div className="text-2xl ">
-              <h2 className="headerUnderline">Medication Management</h2>
+              <h2 className="headerUnderline">{translations[language].medManage}</h2>
             </div>
             <div className="w-1/2 font-semibold text-xl mx-auto pt-10">
               <p>
-                Experience the precision of personalized mental health care
-                through detailed interview with a review of your history and
-                past treatment. Find peace of mind in a treatment plan crafted
-                specifically for you that takes into account all aspects of your
-                persona.
+              {translations[language].medInfo}
               </p>
             </div>
           </div>
@@ -122,15 +140,12 @@ function Home() {
             </div>
             <div className="text-2xl ">
               <h2 className="headerUnderline font-semibold">
-                Ketamine Assisted Psychotherapy
+              {translations[language].ketDiv}
               </h2>
             </div>
             <div className="w-1/2 mx-auto font-semibold text-xl pt-10">
               <p>
-                Explore the possibilities for healing and growth with Ketamine
-                Assisted psychotherapy, and emerging field in mental health.
-                Embrace transformative healing in a safe, supportive space,
-                tailored to your particular needs.
+              {translations[language].ketInfo}
               </p>
             </div>
           </div>

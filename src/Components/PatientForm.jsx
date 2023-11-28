@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useLanguage } from "./LanguageProvider";
 
 export default function PatientForm(props) {
   const [formData, setFormData] = useState({
@@ -30,6 +31,28 @@ export default function PatientForm(props) {
 
   const formHeightClass = props.fullWidth ? "lg:gap-6 gap-1": "gap-6"
   const formWidthClass = props.fullWidth ? "w-full rounded-b-xl  " : "lg:w-1/3 mb-16";
+
+
+  const translations = {
+    en:{
+      medMan:`We will engage in a process of reviewing your psychiatric, medical, and social history. As you see fit, we will also review past records of mental health treatment. Together, we will decide upon what problems we need to treat and how those might fit into mental health diagnoses. However, treatment will be individualized to you as a person, not to your diagnoses. We will explore the many avenues and options that you have on your road to wellness.`,
+      ketDiv:`You will engage in a psychiatric evaluation to determine your appropriateness for therapy. You must be engaged with a psychotherapist prior to beginning therapy, and be medically appropriate for therapy (relative contraindications include, but are not limited to, uncontrolled hypertension and primary psychotic disorders such as schizophrenia and Bipolar I disorder). You will then have three preparatory sessions followed by a medicine session and then an integration session. You may then have additional medicine and integration sessions (an average for treatment resistant depression is 4-6 sessions). You will have the opportunity at each step to decide if you want to go forward with treatment, as you will only be charged for services as you receive them. Ketamine Assisted Psychotherapy is not covered by insurance, and rates will be discussed prior to engagement in services.`,
+      med:`Medication Mangement`,
+      ket:`Ketamine Assisted Pspychotherapy`
+
+
+    },
+    es:{
+      medMan:`Llevaremos a cabo un proceso de revisión de su historial psiquiátrico, médico y social. Según considere adecuado, también revisaremos registros anteriores de tratamiento de salud mental. Juntos, decidiremos cuáles son los problemas que necesitamos tratar y cómo estos podrían encajar en diagnósticos de salud mental. Sin embargo, el tratamiento se individualizará según usted como persona, no según sus diagnósticos. Exploraremos las numerosas vías y opciones que tiene en su camino hacia el bienestar.`,
+      ketDiv:`"Se llevará a cabo una evaluación psiquiátrica para determinar su idoneidad para la terapia. Debe estar involucrado/a con un psicoterapeuta antes de comenzar la terapia y ser médicamente adecuado/a para la terapia (las contraindicaciones relativas incluyen, entre otras, hipertensión no controlada y trastornos psicóticos primarios como la esquizofrenia y el trastorno bipolar I). A continuación, tendrá tres sesiones preparatorias seguidas de una sesión de medicación y luego una sesión de integración. Posteriormente, puede tener sesiones adicionales de medicación e integración (un promedio para la depresión resistente al tratamiento es de 4 a 6 sesiones). En cada paso, tendrá la oportunidad de decidir si desea continuar con el tratamiento, ya que solo se le cobrará por los servicios que reciba. La Terapia Asistida con Ketamina no está cubierta por el seguro, y las tarifas se discutirán antes de comenzar los servicios.`,
+      med:`Gestión de Medicamentos`,
+      ket:`Psicoterapia Asistida con Ketamina.`
+
+    }
+  }
+
+  const { language, changeLanguage } = useLanguage();
+
   
   return (
     
@@ -118,6 +141,7 @@ export default function PatientForm(props) {
               <div>Service(s) Requested:</div>
 
               <select
+              aria-label="Services Requested"
                 className="bg-gray-100 w-full text-black rounded-md p-2  outline-black border  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
                 id="service"
                 value={formData.service}
@@ -141,6 +165,7 @@ export default function PatientForm(props) {
               <div>Payment Method:</div>
 
               <select
+              aria-label="Payment Method"
               value={formData.payment}
                 onChange={handleChange}
                 className="bg-gray-100 w-full text-black rounded-md p-2  outline-black border  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"

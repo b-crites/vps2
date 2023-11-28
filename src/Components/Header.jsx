@@ -78,7 +78,7 @@ export default function Header() {
   <a href="#" className="block p-4 text-white font-bold">
     {translations[language].vpsTitle}
   </a>
-  <button onClick={showNav} className="p-4">
+  <button onClick={showNav} className="p-4" aria-label="Open Navigation">
     <GiHamburgerMenu />
   </button>
 </div>
@@ -90,20 +90,15 @@ export default function Header() {
       
         <nav>
           <Link
-            to=""
-            className="block py-2.5 px-4 rounded transition duration-200 hover:text-white hover:bg-red-300"
-            onClick={showNav}
-          >
-            {translations[language].homeNav}
-          </Link>
-          <Link
             to="services"
+            aria-label="Services"
             className="block py-2.5 px-4 rounded transition duration-200 hover:text-white hover:bg-red-300"
             onClick={showNav}
           >
             {translations[language].servicesNav}
           </Link>
           <Link
+          aria-label="Insurance and Payments"
             to="insurance"
             className="block py-2.5 px-4 rounded transition duration-200 hover:text-white hover:bg-red-300"
             onClick={showNav}
@@ -111,6 +106,7 @@ export default function Header() {
             {translations[language].insuranceNav}
           </Link>
           <Link
+          aria-label="Contact"
             to="contact"
             className="block py-2.5 px-4 rounded transition duration-200 hover:text-white hover:bg-red-300"
             onClick={showNav}
@@ -118,12 +114,14 @@ export default function Header() {
             {translations[language].contactNav}
           </Link>
           <button
+          aria-label="Open Patient Request"
             onClick={openModal}
             className="w-full block mt-2 py-2.5 px-4 rounded transition duration-200 hover:text-white hover:bg-red-300 bg-white text-black"
           >
             {translations[language].patientNav}
           </button>
           <button
+          aria-label="Open Provider Referral"
             onClick={openRef}
             className="w-full block mt-2 py-2.5 px-4 rounded transition duration-200 hover:text-white hover:bg-red-300 bg-white text-black"
           >
@@ -131,7 +129,7 @@ export default function Header() {
           </button>
         </nav>
         {/* Language Button */}
-        <div className="absolute bottom-0 right-2">
+        <div className="absolute bottom-0 right-2" aria-label="Change to Spanish">
             <div className="">
                 <p>{language === 'es' ? 'English' : 'Español'}</p>
             </div>

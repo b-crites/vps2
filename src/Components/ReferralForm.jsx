@@ -1,5 +1,6 @@
 import React, {useState} from "react";
 import axios from "axios";
+import { useLanguage } from "../Components/LanguageProvider";
 
 
 
@@ -33,6 +34,45 @@ export default function ReferralForm(props){
         setFormData({...formData,[name]: value});
     };
 
+    const translations = {
+      en:{
+        title:`60 Second Referral`,
+        provName:`Provider's Name`,
+        provNum:`Provider's Phone Number`,
+        patName:`Patient's Name`,
+        patNum:`Patient's Phone Number`,
+        patEmail:`Patient's Email`,
+        serviceReq:`Service(s) Requested:`,
+        message:`Anything else we should know:`,
+        submit:`Submit`,
+        medBtn:'Medication Management',
+        ketBtn:`Ketamine Assisted Psychotherapy`,
+        both:`Both`,
+        select:`Select...`
+
+      },
+      es:{
+        title:`Referencia de 60 Segundos`,
+        provName:`Nombre del proveedor`,
+        provNum:`Número de teléfono del proveedor`, 
+        patName:`Nombre del paciente`,
+        patNum: `Número de teléfono del paciente`,
+        patEmail: `Correo electrónico del paciente`,
+        serviceReq:`Servicio(s) solicitado(s):`,
+        message:`¿Algo más que debamos saber?`,
+        submit:`Enviar`,
+        medBtn:`Gestión de Medicamentos`,
+        ketBtn:`Psicoterapia Asistida con Ketamina`,
+        both:`Ambos`,
+        select: `Seleccionar...`
+      
+      }
+    }
+
+    const { language, changeLanguage } = useLanguage();
+
+    
+
 
 
     return(
@@ -41,7 +81,7 @@ export default function ReferralForm(props){
         <form onSubmit={handleSubmit}
         className="bg-white mx-auto grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-6 p-5 rounded-b-xl">
             <div className="font-semibold col-span-1 lg:col-span-2 mx-auto text-3xl">
-                60 Second Referral
+                {translations[language].title}
             </div>
             <div className="col-span-1">
               {/* PROVIDER NAME FIELD */}
@@ -57,7 +97,7 @@ export default function ReferralForm(props){
                   required
                 />
                 <label htmlFor="provName" className="form__label">
-                 Provider's Name
+                {translations[language].provName}
                 </label>
               </div>
             </div>
@@ -73,7 +113,7 @@ export default function ReferralForm(props){
                 required
               />
               <label htmlFor="number" className="form__label">
-                Provider's Phone Number
+              {translations[language].provNum}
               </label>
             </div>
             <div className="col-span-1">
@@ -90,7 +130,7 @@ export default function ReferralForm(props){
                   required
                 />
                 <label htmlFor="name" className="form__label">
-                  Patient's Name
+                {translations[language].patName}
                 </label>
               </div>
             </div>
@@ -107,7 +147,7 @@ export default function ReferralForm(props){
                 required
               />
               <label htmlFor="number" className="form__label">
-                Patient's Phone Number
+              {translations[language].patNum}
               </label>
             </div>
             {/* EMAIL FIELD */}
@@ -123,13 +163,14 @@ export default function ReferralForm(props){
                 required
               />
               <label htmlFor="email" className="form__label">
-                Patient's Email
+              {translations[language].patEmail}
               </label>
             </div>
             <div className=" col-span-1 form__group field">
-              <div>Service(s) Requested:</div>
+              <div>{translations[language].serviceReq}</div>
 
               <select
+              aria-label="Select"
                 className="bg-gray-100 w-full text-black rounded-md p-2  outline-black border  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
                 id="service"
                 value={formData.service}
@@ -137,20 +178,21 @@ export default function ReferralForm(props){
                 
                 onChange={handleChange}
               >
-                <option value={null}>Select...</option>
+                <option value={null}>{translations[language].select}</option>
                 <option value="Medication Management">
-                  Medication Management
+                  {translations[language].medBtn}
                 </option>
                 <option value="Ketamine">
-                  Ketamine Assisted Psychotherapy
+                {translations[language].ketBtn}
                 </option>
-                <option value="Both">Both</option>
+                <option value="Both">{translations[language].both}</option>
               </select>
             </div>
               {/* MESSAGE */}
               <div className="col-span-1 lg:col-span-2 ">
-              Anything else we should know:
+              {translations[language].message}
               <textarea
+                aria-label="Message"
                 onChange={handleChange}
                 value={formData.message}
                 id="message"
@@ -164,7 +206,7 @@ export default function ReferralForm(props){
           
           className="rounded-3xl active:scale-95 duration-100 transition hover:bg-red-200 bg-red-50 w-full py-2 px-3"
         >
-          Submit
+          {translations[language].submit}
         </button>
       </div>
            
