@@ -38,7 +38,10 @@ function Home() {
       ketInfo:`Explore the possibilities for healing and growth with Ketamine
       Assisted psychotherapy, and emerging field in mental health.
       Embrace transformative healing in a safe, supportive space,
-      tailored to your particular needs.`
+      tailored to your particular needs.`,
+      bannerTitle: 'We Are Now Accepting New Patients',
+      bannerText: 'Our practice is currently welcoming new patients seeking compassionate, evidence-based psychiatric care. Whether you are looking for medication management or ketamine-assisted psychotherapy, we are here to support you on your journey to wellness. Take the first step today.',
+      bannerButton: 'Request Appointment'
 
     },
     es: {
@@ -63,6 +66,9 @@ function Home() {
       ketDiv:`Psicoterapia Asistida con Ketamina`,
       medInfo:`Experimenta la precisión de la atención personalizada en salud mental a través de una entrevista detallada con una revisión de tu historial y tratamientos previos. Encuentra tranquilidad en un plan de tratamiento diseñado específicamente para ti, que tiene en cuenta todos los aspectos de tu persona.`,
       ketInfo:`Explora las posibilidades de curación y crecimiento con la psicoterapia asistida con ketamina, un campo emergente en la salud mental. Acepta una curación transformadora en un espacio seguro y de apoyo, adaptado a tus necesidades particulares.`,
+      bannerTitle: 'Ahora Aceptamos Nuevos Pacientes',
+      bannerText: 'Nuestra práctica actualmente está dando la bienvenida a nuevos pacientes que buscan atención psiquiátrica compasiva y basada en evidencia. Ya sea que esté buscando gestión de medicamentos o psicoterapia asistida con ketamina, estamos aquí para apoyarlo en su viaje hacia el bienestar. Dé el primer paso hoy.',
+      bannerButton: 'Solicitar Cita'
 
     },
   };
@@ -107,6 +113,24 @@ function Home() {
               {translations[language].consultBtn}
             </button>
           </div>
+        </div>
+      </div>
+
+      {/* New Patients Banner */}
+      <div className="w-full bg-teal text-white py-12 px-6">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
+            {translations[language].bannerTitle}
+          </h2>
+          <p className="text-lg lg:text-xl mb-6 leading-relaxed">
+            {translations[language].bannerText}
+          </p>
+          <button
+            onClick={scrollToDiv}
+            className="py-3 px-8 rounded-lg bg-white text-teal font-semibold hover:bg-red-300 text-black hover:text-white transition duration-200 active:scale-95"
+          >
+            {translations[language].bannerButton}
+          </button>
         </div>
       </div>
 
