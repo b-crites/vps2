@@ -27,7 +27,7 @@ function Home() {
       servicesBtn: "Go to Services Page",
       homeTitle:`Eugene's Medication Management and Ketamine Assisted Psychotherapy`,
       homeDescription:'At Velez Psychiatric Services, we believe in giving you the help you desire.',
-      consultBtn:'Book a Consultation',
+      consultBtn:'New Patient Portal',
       medManage:'Medication Management',
       ketDiv:'Ketamine Assisted Psychotherapy',
       medInfo:`Experience the precision of personalized mental health care
@@ -41,7 +41,7 @@ function Home() {
       tailored to your particular needs.`,
       bannerTitle: 'We Are Now Accepting New Patients',
       bannerText: 'Our practice is currently welcoming new patients seeking compassionate, evidence-based psychiatric care. Whether you are looking for medication management or ketamine-assisted psychotherapy, we are here to support you on your journey to wellness. Take the first step today.',
-      bannerButton: 'Request Appointment'
+      bannerButton: 'Request Consultation'
 
     },
     es: {
@@ -68,7 +68,7 @@ function Home() {
       ketInfo:`Explora las posibilidades de curación y crecimiento con la psicoterapia asistida con ketamina, un campo emergente en la salud mental. Acepta una curación transformadora en un espacio seguro y de apoyo, adaptado a tus necesidades particulares.`,
       bannerTitle: 'Ahora Aceptamos Nuevos Pacientes',
       bannerText: 'Nuestra práctica actualmente está dando la bienvenida a nuevos pacientes que buscan atención psiquiátrica compasiva y basada en evidencia. Ya sea que esté buscando gestión de medicamentos o psicoterapia asistida con ketamina, estamos aquí para apoyarlo en su viaje hacia el bienestar. Dé el primer paso hoy.',
-      bannerButton: 'Solicitar Cita'
+      bannerButton: 'Solicitar Consulta'
 
     },
   };

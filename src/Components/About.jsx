@@ -53,33 +53,20 @@ export default function ReadMore() {
       image: AlfredoPic,
       preview: `${translations[language].alfredoPreview}`,
       content:`${translations[language].alfredoContent}`
-    },
-    {
-        name: `${translations[language].melanieName}`,
-        title: `${translations[language].melanieTitle}`,
-        image:MelaniePic,
-        preview: `${translations[language].melaniePreview}`,
-        content: `${translations[language].melanieContent}`
-      }, 
-    {
-        name:`${translations[language].cappyName}`,
-        title:`${translations[language].cappyTitle}`,
-        image: CappyPic,
-        content: `${translations[language].cappyContent}`
-      }
+    }
   ];
 
   return (
     <>
-      <div className="xl:float-right pt-14 mb-10 ms-8 text-3xl xl:text-5xl font-semibold xl:mb-20 xl:me-60 text-white">
+      <div className="text-center pt-14 mb-10 text-3xl xl:text-5xl font-semibold xl:mb-20 text-white">
         <h2>{translations[language].meetTeam}</h2>
       </div>
-      <div className="center w-full mb-10 xl:flex xl:justify-center flex-wrap xl:items-center xl:space-x-7 space-y-4 xl:space-y-0">
+      <div className="flex justify-center w-full mb-10 px-4">
         {data.map((data, index) => (
 
-            <Card key={index} name={data.name} title={data.title} image={data.image} preview={data.preview} content={data.content} />
+            <Card key={index} name={data.name} title={data.title} image={data.image} preview={data.preview} content={data.content} horizontal={true} />
         ))
-        
+
         }
       </div>
     </>

@@ -53,7 +53,8 @@ export default function Header() {
       insuranceNav: 'Insurance/Payments',
       contactNav: 'Contact',
       patientNav: 'Patient Request',
-      refNav: 'Make a Referral'
+      refNav: 'Make a Referral',
+      portalLogin: 'Patient Portal Login'
     },
     es: {
       vpsTitle: 'Servicios Psiquiátricos Vélez',
@@ -62,7 +63,8 @@ export default function Header() {
       insuranceNav: 'Seguros/Pagos',
       contactNav: 'Contacto',
       patientNav: 'Solicitud del Paciente',
-      refNav: 'Hacer una Referencia'
+      refNav: 'Hacer una Referencia',
+      portalLogin: 'Inicio de Sesión del Portal del Paciente'
 
     },
   };
@@ -78,9 +80,20 @@ export default function Header() {
   <a href="#" className="block p-4 text-white font-bold">
     {translations[language].vpsTitle}
   </a>
-  <button onClick={showNav} className="p-4" aria-label="Open Navigation">
-    <GiHamburgerMenu />
-  </button>
+  <div className="flex items-center gap-2">
+    <a
+      href="https://www.valant.io/prospectivepatient/VelezPsychiatricSvcs/embedded"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hidden sm:block bg-white text-black py-2 px-4 rounded font-semibold hover:bg-gray-100 transition duration-200"
+      aria-label="Patient Portal Login"
+    >
+      {translations[language].portalLogin}
+    </a>
+    <button onClick={showNav} className="p-4" aria-label="Open Navigation">
+      <GiHamburgerMenu />
+    </button>
+  </div>
 </div>
 
       <div
