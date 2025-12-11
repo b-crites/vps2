@@ -97,7 +97,7 @@ function Home() {
           />
         </div>
 
-        <div className="text-overlay  z-10 rounded-md text-black ps-10">
+        <div className="text-overlay  z-10 rounded-md text-black ps-4 lg:ps-10">
           <h2 className="titleHeader text-white xl:text-5xl md:text-4xl  font-semibold text-3xl ">
           {translations[language].homeTitle}
           </h2>

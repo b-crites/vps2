@@ -28,7 +28,7 @@ export default function Card({ name, title, image, preview, content, horizontal 
       <div className="max-w-4xl w-full bg-white rounded-lg shadow-lg overflow-hidden flex flex-col lg:flex-row lg:items-start">
         <div className="lg:w-1/3 flex-shrink-0">
           <img
-            className="object-center object-cover h-64 lg:h-96 w-full"
+            className="object-center object-cover h-80 lg:h-full w-full"
             src={image}
             alt={`${name}'s Photo`}
           />

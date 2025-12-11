@@ -10,7 +10,7 @@ export default function ReadMore() {
   
   const translations = {
     en:{
-      meetTeam: 'Meet Our Team',
+      meetTeam: 'Meet Dr. Velez',
       alfredoName: 'Alfredo Velez',
       alfredoTitle: 'Psychiatrist, MD',
       alfredoPreview: 'Dr. Velez is a board-certified psychiatrist who trained at the Temple University School of Medicine and completed a psychiatric residency at Maricopa Integrated Health Systems...',
@@ -26,7 +26,7 @@ export default function ReadMore() {
       
     },
     es:{
-      meetTeam: 'Conozca a Nuestro Equipo',
+      meetTeam: 'Conozca al Dr. Vélez',
       alfredoName: 'Alfredo Vélez',
       alfredoTitle: 'Psiquiatra, MD',
       alfredoPreview: 'El Dr. Vélez es un psiquiatra certificado que se capacitó en la Facultad de Medicina de la Universidad de Temple y completó una residencia psiquiátrica en Maricopa Integrated Health Systems...',
