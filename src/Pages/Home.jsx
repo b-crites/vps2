@@ -97,13 +97,13 @@ function Home() {
           />
         </div>
 
-        <div className="text-overlay z-10 rounded-md text-black ps-10">
-          <h2 className="titleHeader xl:text-5xl md:text-4xl  font-semibold text-3xl ">
+        <div className="text-overlay  z-10 rounded-md text-black ps-10">
+          <h2 className="titleHeader text-white xl:text-5xl md:text-4xl  font-semibold text-3xl ">
           {translations[language].homeTitle}
           </h2>
 
           <div className="relative float-left lg:w-1/2 lg:pt-S pt-8">
-            <h2 className=" font-semibold md:w-2/3 md:py-6 lg:text-2xl md:text-2xl text-xl titleHeader roboto">
+            <h2 className=" font-semibold text-white md:w-2/3 md:py-6 lg:text-2xl md:text-2xl text-xl titleHeader roboto">
             {translations[language].homeDescription}
             </h2>
             <div className="md:py-10">

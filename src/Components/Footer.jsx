@@ -1,6 +1,7 @@
 import React from 'react';
 import { useLanguage } from './LanguageProvider';
 import { Link } from 'react-router-dom';
+import '../Css/Header.css';
 
 function Footer() {
 
@@ -16,7 +17,8 @@ function Footer() {
       contact: 'Contact',
       resources: 'Resources',
       copyright: 'Velez Psychiatric Services. All rights reserved.',
-      ketFooter:`Ketamine for Depression`
+      ketFooter:`Ketamine for Depression`,
+      language: 'Language'
 
     },
     es:{
@@ -27,7 +29,8 @@ function Footer() {
       contact: 'Contacto',
       resources: 'Recursos',
       copyright: 'Servicios Psiquiátricos de Vélez. Reservados todos los derechos.',
-      ketFooter:`Ketamina para la Depresión`
+      ketFooter:`Ketamina para la Depresión`,
+      language: 'Idioma'
 
     }
   }
@@ -41,12 +44,12 @@ function Footer() {
             <h2 className="text-xl font-bold mb-2">{translations[language].companyInfo}</h2>
             <Link
             to="services"
-            
+
             ><div>{translations[language].services}</div>
             </Link>
             <Link to="insurance"><div>{translations[language].insurance}</div></Link>
             <Link to='contact'><div>{translations[language].contact}</div></Link>
-            
+
           </div>
           <div>
             <h2 className="text-xl font-bold mb-2">{translations[language].resources}</h2>
@@ -54,12 +57,16 @@ function Footer() {
             <p><a href='https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9207256/'>NCBI</a></p>
             <p><a href='https://www.tandfonline.com/doi/full/10.1080/02791072.2019.1587556'>{translations[language].ketFooter}</a></p>
           </div>
-          {/* <div>
-            <h2 className="text-xl font-bold mb-2">Patient Portal</h2>
-            <p>Facebook</p>
-            <p>Twitter</p>
-            <p>Instagram</p>
-          </div> */}
+          <div>
+            <h2 className="text-xl font-bold mb-2">{translations[language].language}</h2>
+            <div className="flex items-center gap-3">
+              <p>{language === 'es' ? 'English' : 'Español'}</p>
+              <label className="switch">
+                <input type="checkbox" onClick={changeLanguage} />
+                <span className="slider"></span>
+              </label>
+            </div>
+          </div>
         </div>
         <div className="mt-8 text-center">
           &copy;  {translations[language].copyright}
