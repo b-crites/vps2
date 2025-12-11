@@ -31,8 +31,8 @@ h1:after {
 .text-overlay {
     position: absolute;
     top: 12%;
+    left: 0;
     width: 75%;
-    
     padding: 1%;
 }
 

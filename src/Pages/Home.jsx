@@ -97,19 +97,19 @@ function Home() {
           />
         </div>
 
-        <div className="text-overlay z-10 rounded-md text-black">
-          <h2 className="titleHeader xl:text-5xl md:text-4xl ps-12 font-semibold text-3xl ">
+        <div className="text-overlay z-10 rounded-md text-black ps-10">
+          <h2 className="titleHeader xl:text-5xl md:text-4xl  font-semibold text-3xl ">
           {translations[language].homeTitle}
           </h2>
 
           <div className="relative float-left lg:w-1/2 lg:pt-S pt-8">
-            <h2 className=" font-semibold md:w-2/3 md:py-6  md:mx-auto lg:text-2xl md:text-2xl align-center text-xl  titleHeader roboto">
+            <h2 className=" font-semibold md:w-2/3 md:py-6 lg:text-2xl md:text-2xl text-xl titleHeader roboto">
             {translations[language].homeDescription}
             </h2>
             <div className="md:py-10">
             <button
               onClick={scrollToDiv}
-              className="block py-2.5 px-4 rounded transition duration-200 bg-teal mx-auto text-white hover:bg-red-300 mt-10 active:scale-95"
+              className="py-2.5 px-4 rounded transition duration-200 bg-teal text-white hover:bg-red-300 mt-10 active:scale-95"
             >
               {translations[language].consultBtn}
             </button>

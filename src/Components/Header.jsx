@@ -82,7 +82,7 @@ export default function Header() {
   </a>
   <div className="flex items-center gap-2">
     <a
-      href="https://www.valant.io/prospectivepatient/VelezPsychiatricSvcs/embedded"
+      href="https://valant.io/prospectivepatient/VPSandGinkgoWellCare"
       target="_blank"
       rel="noopener noreferrer"
       className="hidden sm:block bg-white text-black py-2 px-4 rounded font-semibold hover:bg-gray-100 transition duration-200"
