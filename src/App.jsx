@@ -10,6 +10,7 @@ import Footer from './Components/Footer';
 import ScrollToTop from './Components/ScrollToTop';
 import { LanguageProvider } from './Components/LanguageProvider';
 import Insurance from './Pages/Insurance';
+import Privacy from './Pages/Privacy';
 
 
 
@@ -32,6 +33,7 @@ function App(){
         <Route path='/Services' element={<Services />} />
         <Route path='/Insurance' element = {<Insurance />} />
         <Route path='/Contact' element={<Contact />} />
+        <Route path='/Privacy' element={<Privacy />} />
 
         </Routes>
         <Footer />

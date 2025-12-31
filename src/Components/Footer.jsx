@@ -15,6 +15,7 @@ function Footer() {
       services: 'Services',
       insurance: 'Insurance/Payments',
       contact: 'Contact',
+      privacy: 'Privacy',
       resources: 'Resources',
       copyright: 'Velez Psychiatric Services. All rights reserved.',
       ketFooter:`Ketamine for Depression`,
@@ -27,6 +28,7 @@ function Footer() {
       services: 'Servicios',
       insurance: 'Seguros/Pagos',
       contact: 'Contacto',
+      privacy: 'Privacidad',
       resources: 'Recursos',
       copyright: 'Servicios Psiquiátricos de Vélez. Reservados todos los derechos.',
       ketFooter:`Ketamina para la Depresión`,
@@ -49,6 +51,7 @@ function Footer() {
             </Link>
             <Link to="insurance"><div>{translations[language].insurance}</div></Link>
             <Link to='contact'><div>{translations[language].contact}</div></Link>
+            <Link to='privacy'><div>{translations[language].privacy}</div></Link>
 
           </div>
           <div>
