@@ -11,7 +11,8 @@ export default function Privacy() {
       noSharing: "No mobile information will be shared with third parties/affiliates for marketing/promotional purposes. All other categories exclude text messaging originator opt-in data and consent; this information will not be shared with any third parties.",
       hipaaWarning: "Sending SMS text messages to Velez Psychiatric Services (VPS) & Ginkgo Well Care cannot be guaranteed HIPAA-compliant due to user phone access oversight requirements.",
       consent: "Patients sending SMS text messages to providers is their consent to using SMS text messaging for non-emergency responses from their provider whom patients hold harmless for any viewing of unintended HIPAA-protected information through this mode of communication.",
-      responsibility: "Patients are responsible for safeguarding the transmission of any protected or private information and are strongly encouraged to limit others' access to devices where healthcare messages are viewed and stored."
+      responsibility: "Patients are responsible for safeguarding the transmission of any protected or private information and are strongly encouraged to limit others' access to devices where healthcare messages are viewed and stored.",
+      smsDisclaimer: "Message & data rates may apply. Message frequency may vary. Reply HELP for more information. You can reply STOP to opt-out of further messaging."
     },
     es: {
       title: "Política de Privacidad y Comunicación por SMS",
@@ -19,7 +20,8 @@ export default function Privacy() {
       noSharing: "No se compartirá información móvil con terceros/afiliados con fines de marketing/promoción. Todas las demás categorías excluyen los datos y el consentimiento de activación del originador de mensajes de texto; esta información no se compartirá con terceros.",
       hipaaWarning: "El envío de mensajes de texto SMS a Velez Psychiatric Services (VPS) y Ginkgo Well Care no puede garantizar el cumplimiento de HIPAA debido a los requisitos de supervisión de acceso al teléfono del usuario.",
       consent: "Los pacientes que envían mensajes de texto SMS a los proveedores dan su consentimiento para usar mensajes de texto SMS para respuestas que no son de emergencia de su proveedor, a quien los pacientes eximen de responsabilidad por cualquier visualización de información protegida por HIPAA no intencional a través de este modo de comunicación.",
-      responsibility: "Los pacientes son responsables de salvaguardar la transmisión de cualquier información protegida o privada y se les recomienda encarecidamente limitar el acceso de otras personas a los dispositivos donde se ven y almacenan los mensajes de atención médica."
+      responsibility: "Los pacientes son responsables de salvaguardar la transmisión de cualquier información protegida o privada y se les recomienda encarecidamente limitar el acceso de otras personas a los dispositivos donde se ven y almacenan los mensajes de atención médica.",
+      smsDisclaimer: "Pueden aplicarse tarifas de mensajes y datos. La frecuencia de los mensajes puede variar. Responda HELP para obtener más información. Puede responder STOP para optar por no recibir más mensajes."
     }
   };
 
@@ -56,6 +58,12 @@ export default function Privacy() {
               <p className="text-lg leading-relaxed font-medium">
                 {translations[language].responsibility}
               </p>
+
+              <div className="border-t-2 border-gray-200 mt-8 pt-6">
+                <p className="text-sm text-gray-600 leading-relaxed">
+                  {translations[language].smsDisclaimer}
+                </p>
+              </div>
             </div>
           </div>
         </div>
