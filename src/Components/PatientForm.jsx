@@ -30,7 +30,7 @@ export default function PatientForm(props) {
   };
 
   const formHeightClass = props.fullWidth ? "lg:gap-6 gap-1": "gap-6"
-  const formWidthClass = props.fullWidth ? "w-full rounded-b-xl  " : "lg:w-1/3 mb-16";
+  const formWidthClass = props.fullWidth ? "w-full rounded-b-xl  " : "max-w-3xl w-full mb-16";
 
 
   const translations = {
@@ -198,6 +198,9 @@ export default function PatientForm(props) {
         >
           Submit
         </button>
+      </div>
+      <div className="col-span-2 italic">
+        <p>By providing a telephone number and submitting this form, you are consenting to be contacted by SMS text messaging. Message and data rates may apply. You can reply STOP to opt out of further messaging. You are responsible for safeguarding your information in these text messages.</p>
       </div>
       
     </form>

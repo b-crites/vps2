@@ -71,15 +71,14 @@ export default function ReferralForm(props){
 
     const { language, changeLanguage } = useLanguage();
 
-    
-
-
+    const formHeightClass = props.fullWidth ? "lg:gap-6 gap-1" : "gap-6";
+    const formWidthClass = props.fullWidth ? "w-full rounded-b-xl" : "max-w-3xl w-full mb-16";
 
     return(
 
 
         <form onSubmit={handleSubmit}
-        className="bg-white mx-auto grid grid-cols-1 lg:grid-cols-2 gap-1 lg:gap-6 p-5 rounded-b-xl">
+        className={`${formWidthClass} bg-white mx-auto grid grid-cols-1 lg:grid-cols-2 ${formHeightClass} p-5`}>
             <div className="font-semibold col-span-1 lg:col-span-2 mx-auto text-3xl">
                 {translations[language].title}
             </div>
