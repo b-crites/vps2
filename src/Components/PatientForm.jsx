@@ -7,21 +7,27 @@ export default function PatientForm(props) {
     name: "",
     number: "",
     email: "",
-    service:"",
-    Last_Psychiatric_Provider:"",
+    service: "",
+    Last_Psychiatric_Provider: "",
+    payment: "",
+    insuranceCarrier: "",
+    memberId: "",
+    groupNumber: "",
     message: "",
   });
-  
+  const [submitting, setSubmitting] = useState(false);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Connected")
-    
+    setSubmitting(true);
     try {
-      await axios.post("https://formspree.io/xeqbozql", formData);
+      await axios.post("/api/send", { formType: "patient", ...formData });
       alert("Form submitted successfully!");
     } catch (error) {
       console.error("Error submitting form:", error);
       alert("There was an error submitting the form. Please try again later.");
+    } finally {
+      setSubmitting(false);
     }
   };
   const handleChange = (e) => {
@@ -166,17 +172,68 @@ export default function PatientForm(props) {
 
               <select
               aria-label="Payment Method"
+              name="payment"
               value={formData.payment}
                 onChange={handleChange}
                 className="bg-gray-100 w-full text-black rounded-md p-2  outline-black border  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
                 id="payment"
               >
-                <option value={null}>Select...</option>
-                <option value="Medication Management">Cash</option>
-                <option value="Ketamine">Insurance</option>
+                <option value="">Select...</option>
+                <option value="Cash">Cash</option>
+                <option value="Insurance">Insurance</option>
               </select>
             </div>
-            
+
+            {/* INSURANCE FIELDS (conditional) */}
+            {formData.payment === "Insurance" && (
+              <div className="col-span-1 lg:col-span-2 grid grid-cols-1 lg:grid-cols-3 gap-6 border-t pt-4">
+                <div className="form__group field">
+                  <input
+                    onChange={handleChange}
+                    id="insuranceCarrier"
+                    name="insuranceCarrier"
+                    type="text"
+                    className="form__field"
+                    value={formData.insuranceCarrier}
+                    placeholder=""
+                    required
+                  />
+                  <label htmlFor="insuranceCarrier" className="form__label">
+                    Insurance Carrier
+                  </label>
+                </div>
+                <div className="form__group field">
+                  <input
+                    onChange={handleChange}
+                    id="memberId"
+                    name="memberId"
+                    type="text"
+                    className="form__field"
+                    value={formData.memberId}
+                    placeholder=""
+                    required
+                  />
+                  <label htmlFor="memberId" className="form__label">
+                    Member ID
+                  </label>
+                </div>
+                <div className="form__group field">
+                  <input
+                    onChange={handleChange}
+                    id="groupNumber"
+                    name="groupNumber"
+                    type="text"
+                    className="form__field"
+                    value={formData.groupNumber}
+                    placeholder=""
+                  />
+                  <label htmlFor="groupNumber" className="form__label">
+                    Group #
+                  </label>
+                </div>
+              </div>
+            )}
+
 
             {/* MESSAGE */}
             <div className="col-span-1 lg:col-span-2 ">
@@ -193,10 +250,10 @@ export default function PatientForm(props) {
       <div className="col-span-1 lg:col-span-2 w-full">
         <button
           type="submit"
-          
-          className="rounded-3xl active:scale-95 duration-100 transition hover:bg-red-200 bg-red-50 w-full py-2 px-3"
+          disabled={submitting}
+          className="rounded-3xl active:scale-95 duration-100 transition hover:bg-red-200 bg-red-50 w-full py-2 px-3 disabled:opacity-60"
         >
-          Submit
+          {submitting ? "Sending..." : "Submit"}
         </button>
       </div>
       <div className="col-span-2 italic">

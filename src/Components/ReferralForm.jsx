@@ -15,10 +15,8 @@ export default function ReferralForm(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log("Connected");
-
     try {
-      await axios.post("https://formspree.io/moqovldl", formData);
+      await axios.post("/api/send", { formType: "referral", ...formData });
       alert("Form submitted successfully!");
     } catch (err) {
       console.error("Error submitting form:", err);
