@@ -152,10 +152,10 @@ export default function PatientForm(props) {
                 id="service"
                 value={formData.service}
                 name="service"
-                
+                required
                 onChange={handleChange}
               >
-                <option value={null}>Select...</option>
+                <option value="">Select...</option>
                 <option value="Medication Management">
                   Medication Management
                 </option>
@@ -175,6 +175,7 @@ export default function PatientForm(props) {
               name="payment"
               value={formData.payment}
                 onChange={handleChange}
+                required
                 className="bg-gray-100 w-full text-black rounded-md p-2  outline-black border  focus:outline-none focus:ring-1 focus:ring-blue-500 transition ease-in-out duration-150"
                 id="payment"
               >
@@ -211,7 +212,6 @@ export default function PatientForm(props) {
                     className="form__field"
                     value={formData.memberId}
                     placeholder=""
-                    required
                   />
                   <label htmlFor="memberId" className="form__label">
                     Member ID
